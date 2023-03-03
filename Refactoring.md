@@ -74,10 +74,9 @@ function deterministicPartitionKey(event) {
 module.exports = { deterministicPartitionKey };
 ````
 
-In this refactored code, we use optional chaining to assign the value of event.partitionKey to candidate if it exists. If event.partitionKey is falsy or doesn't exist, we fall back to generating a deterministic partition key using a SHA-3 512-bit hash of the event object.
+In this refactored code, we use optional chaining to assign the value of event.partitionKey to candidate if it exists. If event.partitionKey is falsy and the event is defined, we fall back to generating a deterministic partition key using a SHA-3 512-bit hash of the event object.
 
 We also remove the nested if statements by using an if statement to check if candidate is not a string and converting it to a string using JSON.stringify if necessary. Finally, we add a check to make sure candidate is defined before checking its length and generating a hash if necessary.
 
 Additionally, we include a fallback to the TRIVIAL_PARTITION_KEY value in case candidate is falsy. This is to ensure that the function always returns a valid partition key, even if the input is undefined, null, or an empty object.
 
-I hope this explanation helps! Let me know if you have any further questions.
