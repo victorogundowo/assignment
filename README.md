@@ -4,6 +4,8 @@ This project contains two challenges - a "Ticket Breakdown" challenge and a "Ref
 ## [Ticket Breakdown](Ticket_Breakdown.md)
 
 ## [Refactoring](Refactoring.md)
+The code was refactored to eliminate unneccssary "if else" statements.
+The conditional statement is now more readable.
 
 If you are a JS novice, here's how to get started:
 1. [Install Node.js](https://nodejs.org/en/download/) (we use `^16`, the latest LTS)
